@@ -11,42 +11,82 @@ const WELCOME = [
   "Feel free to use the commands below to navigate through my Portfolio Website",
   "Type 'help' for available commands",
   "Type 'impressum' for legal disclosure",
-  "Type 'change language to [choose your language]' for changing the portofolio language",
+  "Type 'change the language to [choose your language]' for changing the portofolio language",
   "       Current Available Languages: [EN] or [DE]",
   '',
 ];
 
-const COMMANDS: { [key: string]: string[] } = {
-  help: [
-    "Available commands:",
-    "[about] - Learn more about me",
-    "[clear] - Clear the terminal",
-    "[contact] - How to reach me",
-    "[projects] - See my featured projects",
-  ],
-  about: [
-    "I'm Julio Salim, a student of Computer Linguistics at University of Heinrich-Heine, Germany. I am currently in my end of studies and searching my Bachelor Thema",
-    "I love working with Python, Pandas, SpaCy, HuggingFace and and currently learning Java, PyTorch, skicit-learn, JavaScript and Next.js.",
-    "My Motivation Quote:",
-    " ",
-    "              'The Only Way to achieve perfection is to practice it everyday' ",
-    " ",
-  ],
-  contact: [
-    "You can reach me at: juliosalim@outlook.com",
-    "Or connect on LinkedIn: linkedin.com/in/juliosalim",
-    "My huggingface profile: https://huggingface.co/juliosalim",
-    "My github profile: https://github.com/juliosalim",
-    "and my website: https://juliosalim.comm'"
-  ],
-  projects: [
-    "Currently working on Projects:",
-    "- Portfolio Terminal [this site]",
-    "- Text Simplification using WordNet with context awarness [Uni-Project]",
-    "- SemEval-2024 - Task 1: AdMiRe [SemEval-2024 Contest]",
-    "The Research Paper will be release soon in ACL Anthology"
-  ],
-  clear: [],
+const COMMANDS = {
+  EN: {
+    help: [
+      "Available commands:",
+      "about - Learn more about me",
+      "clear - Clear the terminal",
+      "contact - How to reach me",
+      "projects - See my featured projects",
+      "change the language to DE - Switch to German"
+    ],
+    about: [
+      "I'm Julio Salim, a Student of Computer Linguists at the University of Heinrich-Heine, Germany. I am currently approaching the end of my Bachelor Degree and looking for a Thema for my Bachelor Thesis",
+      "I love working with Python, Pandas, Spacy, HuggingFace and want to expirience more with other AI and NLP Tools.",
+      "Also currently learning Java, JavaScript, PyTorch, Sckicit-Learn and Next.js",
+      "My Motivation Quote:",
+      "                'The only way to achieve the impossible is beliving the possibility'",
+      "                 '  - Julio Salim '                                                 "
+    ],
+    contact: [
+      "You can reach me at: <strong><a href=\"mailto:juliosalim@outlook.com\" class=\"underline text-blue-400 hover:text-blue-300\">juliosalim@outlook.com</a></strong>",
+      "Or connect on <a href=\"https://linkedin.com/in/juliosalim\" target=\"_blank\" class=\"underline text-blue-400 hover:text-blue-300\">LinkedIn</a>",
+      "My huggingface profile: <a href=\"https://huggingface.co/jlsalim\" target=\"_blank\" class=\"underline text-blue-400 hover:text-blue-300\">huggingface.co/jlsalim</a>",
+      "My github profile: <a href=\"https://github.com/jujul100\" target=\"_blank\" class=\"underline text-blue-400 hover:text-blue-300\">github.com/jujul100</a>",
+      "and my website: <a href=\"https://juliosalim.com\" target=\"_blank\" class=\"underline text-blue-400 hover:text-blue-300\">juliosalim.com</a>"
+    ],
+    projects: [
+      "Currently working on Projects:",
+      "- Portfolio Terminal [this site]",
+      "- Text Simplification using WordNet with context awarness [uni-Project <exam>]",
+      "- SemEval 2024 - Task 1: AdMiRe [SemEval-2024 Competition]",
+      "The Research Paper will be release soon in ACL Anthology"
+    ],
+    clear: [],
+    notFound: (cmd: string) => `Command not found: ${cmd}`,
+    languageChanged: "Language changed to English.",
+  },
+  DE: {
+    Hilfe: [
+      "Verfügbare Befehle:",
+      "[ÜberMich]- Mehr über mich",
+      "[Leeren]- Terminal leeren",
+      "[Kontakt] - Kontakt aufnehmen",
+      "[Projekte] - Projekte anzeigen",
+      "[Sprache wechseln zu [wähle ihre Sprache]]- Wechsle zu Englisch"
+    ],
+    ÜberMich: [
+      "Ich bin Julio Salim, ein Full-Stack-Entwickler mit Leidenschaft für schöne, funktionale Web- und KI-Erlebnisse.",
+      "Ich arbeite gerne mit React, Next.js, TypeScript und KI-Tools.",
+      "Immer am Lernen, immer am Bauen!",
+    ],
+    Kontakt: [
+      "Sie können mich unter <strong><a href=\"mailto:juliosalim@outlook.com\" class=\"underline text-blue-400 hover:text-blue-300\">juliosalim@outlook.com</a></strong> erreichen",
+      "Oder verknüpfen Sie mich auf <a href=\"https://linkedin.com/in/juliosalim\" target=\"_blank\" class=\"underline text-blue-400 hover:text-blue-300\">LinkedIn</a>",
+      "Mein huggingface Profil: <a href=\"https://huggingface.co/jlsalim\" target=\"_blank\" class=\"underline text-blue-400 hover:text-blue-300\">huggingface.co/jlsalim</a>",
+      "Mein github Profil: <a href=\"https://github.com/jujul100\" target=\"_blank\" class=\"underline text-blue-400 hover:text-blue-300\">github.com/jujul100</a>",
+      "und meine Website: <a href=\"https://juliosalim.com\" target=\"_blank\" class=\"underline text-blue-400 hover:text-blue-300\">juliosalim.com</a>"
+    ],
+    Projekte: [
+      "Aktuell arbeite ich an Projekten:",
+      "- Portfolio Terminal [diese Seite]",
+      "- Text Vereinfachung mit WordNet mit Kontextbewusstsein [Uni-Projekt]",
+      "- SemEval-2024 - Aufgabe 1: AdMiRe [SemEval-2024 Wettbewerb]",
+      "Die Forschungs-Paper wird bald in der ACL Anthologie veröffentlicht"
+    ],
+    Leeren: [],
+    notFound: (cmd: string) => `Befehl nicht gefunden: ${cmd} - haben Sie ausversehenlich vertippt? ;D `,
+    languageChanged: [
+      "Sprache auf Deutsch umgestellt.", 
+      "Tippen Sie 'Hilfe' für verfügbare Befehle"
+    ]
+  }
 };
 
 function useCharTypewriter(lines: string[], onDone?: () => void) {
@@ -141,6 +181,7 @@ function Terminal() {
   const [welcomeDone, setWelcomeDone] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const outerScrollRef = useRef<HTMLDivElement>(null);
+  const [lang, setLang] = useState('EN');
 
   const PROMPT = "user@julio's-portfolio:~$";
 
@@ -182,17 +223,36 @@ function Terminal() {
       ...prev,
       cmd.trim() ? `${PROMPT} ${cmd}` : PROMPT,
     ]);
-    const command = cmd.trim().toLowerCase();
+    const command = cmd.trim();
     if (command === '') return;
-    if (COMMANDS[command]) {
-      if (command === 'clear') {
+
+    // Language switch logic
+    if (command.toLowerCase() === 'change the language to de') {
+      setLang('DE');
+      setCommandQueue((prev) => [...prev, COMMANDS.DE.languageChanged]);
+      return;
+    }
+    if (command.toLowerCase() === 'change the language to en') {
+      setLang('EN');
+      setCommandQueue((prev) => [...prev, [COMMANDS.EN.languageChanged]]);
+      return;
+    }
+
+    // Normal command handling - check both exact match and lowercase match
+    const commands = COMMANDS[lang as keyof typeof COMMANDS];
+    const exactMatch = (commands as any)[command];
+    const lowerMatch = (commands as any)[command.toLowerCase()];
+    const matchedCommand = exactMatch || lowerMatch;
+    
+    if (matchedCommand) {
+      if (command.toLowerCase() === 'clear' || command.toLowerCase() === 'leeren') {
         setHistory(['']);
         setCommandQueue([]);
       } else {
-        setCommandQueue((prev) => [...prev, COMMANDS[command]]);
+        setCommandQueue((prev) => [...prev, matchedCommand]);
       }
     } else {
-      setCommandQueue((prev) => [...prev, [`Command not found: ${cmd} - or might be under maintenance :D, but you can always try again later on`]]);
+      setCommandQueue((prev) => [...prev, [(commands as any).notFound(cmd)]]);
     }
   };
 
@@ -249,7 +309,7 @@ function Terminal() {
         <div ref={outerScrollRef} className="flex-1 overflow-y-auto p-2 sm:p-4 text-white text-xs sm:text-sm">
           {visibleLines.map((line, i) => (
             <div key={i} className="whitespace-pre-wrap leading-relaxed">
-              {line}
+              <span dangerouslySetInnerHTML={{ __html: line }} />
               {/* Blinking cursor for the currently animating welcome line */}
               {!welcomeDone && isWelcomeTyping && i === currentCharIndex.line && (
                 <span className="animate-pulse"> █</span>
