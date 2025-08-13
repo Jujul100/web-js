@@ -76,7 +76,7 @@ const COMMANDS = {
     Projekte: [
       "Aktuell arbeite ich an Projekten:",
       "- Portfolio Terminal [diese Seite]",
-      "- Text Vereinfachung mit WordNet mit Kontextbewusstsein [Uni-Projekt]",
+      "- Text Vereinfachung mit morphologische Analyse in Deutsch Sprache [Uni-Projekt]",
       "- SemEval-2024 - Aufgabe 1: AdMiRe [SemEval-2024 Wettbewerb]",
       "Die Forschungs-Paper wird bald in der ACL Anthologie veröffentlicht"
     ],
