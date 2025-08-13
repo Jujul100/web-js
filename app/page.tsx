@@ -5,8 +5,8 @@ import { useRef, useState, useEffect } from 'react';
 const WELCOME = [
   "Hello, Welcome to my Portfolio Website",
   "I am Julio Salim",
-  "I am interested in AI and NLP and currently deep dive about it",
-  "Currently searching for a Part-Time Job and a Internship",
+  "Currently interested in AI and NLP and currently trying to understand about it",
+  "Looking for a Part-Time Job and a Internship",
   "Feel free to look around and explore my Portfolio Website and reach me out if your interested in my work",
   "Feel free to use the commands below to navigate through my Portfolio Website",
   "Type 'help' for available commands",
@@ -44,7 +44,7 @@ const COMMANDS = {
     projects: [
       "Currently working on Projects:",
       "- Portfolio Terminal [this site]",
-      "- Text Simplification using WordNet with context awarness [uni-Project <exam>]",
+      "- Text Simplification using Morphological Analysis in German Language [uni-Project <exam>]",
       "- SemEval 2024 - Task 1: AdMiRe [SemEval-2024 Competition]",
       "The Research Paper will be release soon in ACL Anthology"
     ],
