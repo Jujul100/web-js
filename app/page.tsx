@@ -5,10 +5,10 @@ import { useRef, useState, useEffect } from 'react';
 const WELCOME = [
   "Hello, Welcome to my Portfolio Website",
   "I am Julio Salim",
-  "Currently interested in AI and NLP and currently trying to understand about it",
-  "Looking for a Part-Time Job and a Internship",
+  "I am interested in AI and NLP and currently understand about it",
+  "Looking forward for a Part-Time Job or a Internship",
   "Feel free to look around and explore my Portfolio Website and reach me out if your interested in my work",
-  "Feel free to use the commands below to navigate through my Portfolio Website",
+  "Please use the commands below to navigate your journey through my Portfolio Website",
   "Type 'help' for available commands",
   "Type 'impressum' for legal disclosure",
   "Type 'change the language to [choose your language]' for changing the portofolio language",
@@ -48,6 +48,13 @@ const COMMANDS = {
       "- SemEval 2024 - Task 1: AdMiRe [SemEval-2024 Competition]",
       "The Research Paper will be release soon in ACL Anthology"
     ],
+    impressum: [
+      "IMPRESSUM",
+      "----------- Julio Salim -----------",
+      "Address: Kirchstrasse 21, 40227 Düsseldorf",
+      "Email: juliosalim@outlook.com",
+      "Phone: +49 1793940233",
+    ],
     clear: [],
     notFound: (cmd: string) => `Command not found: ${cmd}`,
     languageChanged: "Language changed to English.",
@@ -79,6 +86,13 @@ const COMMANDS = {
       "- Text Vereinfachung mit morphologische Analyse in Deutsch Sprache [Uni-Projekt]",
       "- SemEval-2024 - Aufgabe 1: AdMiRe [SemEval-2024 Wettbewerb]",
       "Die Forschungs-Paper wird bald in der ACL Anthologie veröffentlicht"
+    ],
+    impressum: [
+      "IMPRESSUM",
+      "----------- Julio Salim -----------",
+      "Address: Kirchstrasse 21, 40227 Düsseldorf",
+      "Email: juliosalim@outlook.com",
+      "Mobilfunk: +49 1793940233",
     ],
     Leeren: [],
     notFound: (cmd: string) => `Befehl nicht gefunden: ${cmd} - haben Sie ausversehenlich vertippt? ;D `,
